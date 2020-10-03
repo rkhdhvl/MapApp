@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -104,9 +105,12 @@ class MapItemAdapter() : RecyclerView.Adapter<MapItemAdapter.PlaceViewHolder>() 
                     FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, height)
                 frame.layoutParams = layoutParams
                 view.addView(frame)
+                view.controlTouchEvent(false)
 
                 val options = GoogleMapOptions()
-                options.liteMode(true)
+                options.zoomGesturesEnabled(false)
+                options.scrollGesturesEnabled(false)
+                options.scrollGesturesEnabledDuringRotateOrZoom(false)
 
                 val fm: FragmentManager = (it as AppCompatActivity).supportFragmentManager
                 supportMapFragment = SupportMapFragment.newInstance(options)

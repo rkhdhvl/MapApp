@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
+    android:id="@+id/parentPanel"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
@@ -17,7 +18,7 @@
         android:layout_marginBottom="5dp" />
 
 
-    <FrameLayout
+    <com.practice.maps_recyclerview.view.MyFrameLayout
         android:id="@+id/place_map"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
